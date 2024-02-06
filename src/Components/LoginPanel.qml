@@ -18,7 +18,7 @@ Item {
     width: inputWidth * 1.2
     radius: 5
     visible: config.LoginBackground == "true" ? true : false
-    color: config.mantle
+    color: config.highlightLow
   }
   Column {
     spacing: 8
@@ -60,12 +60,15 @@ Item {
       id: userField
       height: inputHeight
       width: parent.width
+      horizontalAlignment: Text.AlignHLeft
     }
     PasswordField {
       id: passwordField
       height: inputHeight
       width: parent.width
       onAccepted: loginButton.clicked()
+      horizontalAlignment: Text.AlignHLeft
+
     }
     Button {
       id: loginButton
@@ -83,12 +86,12 @@ Item {
         }
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
-        color: config.crust
+        color: config.text
         text: "Login"
       }
       background: Rectangle {
         id: buttonBackground
-        color: config.sapphire
+        color: config.pine
         radius: 3
       }
       states: [
@@ -97,7 +100,7 @@ Item {
           when: loginButton.down
           PropertyChanges {
             target: buttonBackground
-            color: config.teal
+            color: config.foam
           }
           PropertyChanges {
             target: buttonText
@@ -108,7 +111,7 @@ Item {
           when: loginButton.hovered
           PropertyChanges {
             target: buttonBackground
-            color: config.teal
+            color: config.foam
           }
           PropertyChanges {
             target: buttonText

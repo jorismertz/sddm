@@ -2,31 +2,31 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 
 Item {
-  implicitHeight: rebootButton.height
-  implicitWidth: rebootButton.width
+  implicitHeight: sleepButton.height
+  implicitWidth: sleepButton.width
   Button {
-    id: rebootButton
+    id: sleepButton
     height: inputHeight
     width: inputHeight
     hoverEnabled: true
     icon {
-      source: Qt.resolvedUrl("../icons/reboot.svg")
+      source: Qt.resolvedUrl("../icons/sleep.svg")
       height: height
       width: width
-      color: config.crust
+      color: config.text
     }
     background: Rectangle {
-      id: rebootButtonBackground
+      id: sleepButtonBg
+      color: config.love
       radius: 3
-      color: config.red
     }
     states: [
       State {
         name: "hovered"
-        when: rebootButton.hovered
+        when: sleepButton.hovered
         PropertyChanges {
-          target: rebootButtonBackground
-          color: config.rosewater
+          target: sleepButtonBg
+          color: config.rose
         }
       }
     ]
@@ -36,6 +36,6 @@ Item {
         duration: 300
       }
     }
-    onClicked: sddm.reboot()
+    onClicked: sddm.suspend()
   }
 }

@@ -9,7 +9,7 @@ TextField {
   echoMode: TextInput.Password
   passwordCharacter: "•"
   passwordMaskDelay: config.PasswordShowLastLetter
-  selectionColor: config.overlay0
+  selectionColor: config.overlay
   renderType: Text.NativeRendering
   font.family: config.Font
   font.pointSize: config.FontSize
@@ -19,7 +19,7 @@ TextField {
   background: Rectangle {
     id: passFieldBackground
     radius: 3
-    color: config.surface0
+    color: config.surface
   }
   states: [
     State {
@@ -27,7 +27,7 @@ TextField {
       when: passwordField.activeFocus
       PropertyChanges {
         target: passFieldBackground
-        color: config.surface1
+        color: config.surface
       }
     },
     State {
@@ -35,7 +35,7 @@ TextField {
       when: passwordField.hovered
       PropertyChanges {
         target: passFieldBackground
-        color: config.surface1
+        color: config.surface
       }
     }
   ]

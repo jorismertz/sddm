@@ -13,12 +13,12 @@ Item {
       source: Qt.resolvedUrl("../icons/reboot.svg")
       height: height
       width: width
-      color: config.crust
+      color: config.text
     }
     background: Rectangle {
       id: rebootButtonBackground
       radius: 3
-      color: config.red
+      color: config.love
     }
     states: [
       State {
@@ -26,7 +26,7 @@ Item {
         when: rebootButton.hovered
         PropertyChanges {
           target: rebootButtonBackground
-          color: config.rosewater
+          color: config.rose
         }
       }
     ]

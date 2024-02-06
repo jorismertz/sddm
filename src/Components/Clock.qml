@@ -6,8 +6,7 @@ Clock {
   color: config.text
   timeFont.family: config.Font
   anchors {
-    margins: 10
     top: parent.top
-    right: parent.right
+    horizontalCenter: parent.horizontalCenter
   }
 }
